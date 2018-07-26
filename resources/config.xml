@@ -1,0 +1,141 @@
+<!--<Applications>
+    <Application>
+        <Name>GoScale Recharge</Name>
+        <Type>eCommerce</Type>-->
+        <Questions name = "test">
+            <Question name="start">
+                <Id>1</Id>
+                <Statement>Are you an existing Users?</Statement>
+                <Type>Polar</Type>
+                <PositiveAction>ExistingInit</PositiveAction>
+                <NegativeAction>New User</NegativeAction>
+            </Question>
+
+            <Question name="ExistingInit">
+                <Id>2</Id>
+                <Type>Choices</Type>
+                <Statement>What would you like to do?</Statement>
+                <Options>
+                    <Option>
+                        <Id>1</Id>
+                        <Statement>Check Balance</Statement>
+                        <PositiveAction>AskRecharge</PositiveAction>
+                    </Option>
+                    <Option>
+                        <Id>2</Id>
+                        <Statement>Easy Recharge</Statement>
+                        <PositiveAction>Recharge</PositiveAction>
+                    </Option>
+                </Options>
+            </Question>
+
+            <Question name="AskRecharge">
+                <Id>3</Id>
+                <Type>Polar</Type>
+                <Statement>Would you like to recharge?</Statement>
+                <PositiveAction>Recharge</PositiveAction>
+                <NegativeAction>No action</NegativeAction>
+            </Question>
+
+            <!--<Question name="No action">
+            </Question>-->
+
+            <Question name="Recharge">
+                <Id>4</Id>
+                <Type>Choices</Type>
+                <Statement>Choose one of the following bundles?</Statement>
+                <Options>
+                    <Option>
+                        <Id>1</Id>
+                        <Statement>50p for 1 minute call. 400 Rs per month</Statement>
+                        <PositiveAction>Success</PositiveAction>
+                    </Option>
+                    <Option>
+                        <Id>2</Id>
+                        <Statement>25p for 1 minute call. 600 Rs per month</Statement>
+                        <PositiveAction>Success</PositiveAction>
+                    </Option>
+                    <Option>
+                        <Id>3</Id>
+                        <Statement>1Rs for 1 minute call. Recharge arbitrary money</Statement>
+                        <PositiveAction>Recharge Amount</PositiveAction>
+                    </Option>
+                </Options>
+            </Question>
+
+            <Question name="Recharge Amount">
+                <Id>5</Id>
+                <Type>TextField</Type>
+                <Statement>Enter amount between 0 to 10000</Statement>
+                <PositiveAction>Success</PositiveAction>
+                <NegativeAction>Fail</NegativeAction>
+            </Question>
+
+            <Question name="New User">
+                <Id>6</Id>
+                <Type>TextField</Type>
+                <Statement>Welcome to Easy Recharge. Please enter your phone number to continue.</Statement>
+                <PositiveAction>Validate OTP</PositiveAction>
+                <NegativeAction>Error</NegativeAction>
+            </Question>
+
+            <Question name = "Validate OTP">
+                <Id>7</Id>
+                <Type>TextField</Type>
+                <Statement>Please Enter your OTP sent to you</Statement>
+                <PositiveAction>ExistingInit</PositiveAction>
+                <NegativeAction>InvalidOTP</NegativeAction>
+            </Question>
+
+            <Question name = "Error">
+                <Id>8</Id>
+                <Type>Polar</Type>
+                <Statement>Incorrect mobile number</Statement>
+                <PositiveAction>New User</PositiveAction>
+                <NegativeAction>No Action</NegativeAction>
+            </Question>
+
+            <Question name = "InvalidOTP">
+                <Id>9</Id>
+                <Type>Choices</Type>
+                <Statement>Incorrect OTP</Statement>
+                <Options>
+                    <Option>
+                        <Id>1</Id>
+                        <Statement>Take to previous enter your OTP flow</Statement>
+                        <PositiveAction>Validate OTP</PositiveAction>
+                     </Option>
+                    <Option>
+                        <Id>2</Id>
+                        <Statement>Take to generate OTP flow and show the text field</Statement>
+                        <PositiveAction>New User</PositiveAction>
+                    </Option>
+                </Options>
+            </Question>
+
+            <Question name="GenerateOTP">
+                <Id>10</Id>
+                <Type></Type>
+                <Statement>OTP: 12345</Statement>
+                <PositiveAction>Validate OTP </PositiveAction>
+                <NegativeAction>No Action</NegativeAction>
+            </Question>
+
+            <Question name="Success">
+                <Id>11</Id>
+                <Type>Polar</Type>
+                <Statement>Recharge Successful</Statement>
+                <PositiveAction>No Action</PositiveAction>
+                <NegativeAction>No Action</NegativeAction>
+            </Question>
+
+            <Question name="Fail">
+                <Id>12</Id>
+                <Type>Polar</Type>
+                <Statement>Invalid Case</Statement>
+                <PositiveAction>No Action</PositiveAction>
+                <NegativeAction>No Action</NegativeAction>
+            </Question>
+        </Questions>
+   <!-- </Application>
+</Applications>-->
